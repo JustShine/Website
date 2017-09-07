@@ -1,0 +1,28 @@
+C:\xampp\mysql -> Click + Shift + Dreapta -> Open Command window here
+
+mysql -u root -p
+
+SHOW DATABASES;
+
+CREATE DATABASE sertar;
+// DROP DATABASE sertar; 
+
+USE sertar;
+SHOW tables; 
+
+CREATE TABLE dosar (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+nume VARCHAR(30);
+pagini INT(3),
+an INT(4));
+
+SHOW tables; 
+DESCRIBE dosar;
+
+//ALTER TABLE dosar DROP pagini; --delete 
+//ALTER TABLE dosar ADD pagini INT(3); --add
+//ALTER TABLE dosar ADD pagini INT(3) AFTER nume; --add in a specific spot
+
+INSERT INTO dosar VALUES (NULL,"Catalin",256,1997);
+//UPDATE dosar SET nume="Ana" WHERE nume="Catalin"; --update --WHERE id="1";
+
+SELECT * FROM dosar;
