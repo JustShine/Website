@@ -26,3 +26,5 @@ INSERT INTO dosar VALUES (NULL,"Catalin",256,1997);
 //UPDATE dosar SET nume="Ana" WHERE nume="Catalin"; --update --WHERE id="1";
 
 SELECT * FROM dosar;
+
+//DELETE FROM dosar WHERE id="1";

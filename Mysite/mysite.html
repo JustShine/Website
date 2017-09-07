@@ -1,12 +1,55 @@
 <html>
-<body>
+   
+   <head>
+      <title>Register Page</title>
+      
+      <style type = "text/css">
+         body {
+            font-family:Arial, Helvetica, sans-serif;
+            font-size:14px;
+         }
+         
+         label {
+            font-weight:bold;
+            width:100px;
+            font-size:14px;
+         }
+         
+         .box {
+            border:#666666 solid 1px;
+         }
+      </style>
+      
+   </head>
+   
+   <body bgcolor = "#FFFFFF">
+	
+      <div align = "center">
+         <div style = "width:300px; border: solid 1px #333333; " align = "left">
+            <div style = "background-color:#333333; color:#FFFFFF; padding:3px;"><b>Register</b></div>
+				
+            <div style = "margin:30px">
+               
+              <form action="cod.php" method="post">
+				Username:<br> <input type="text" name="username"><br><br>
+				Email:<br> <input type="email" name="email"><br><br>
+				Password:<br> <input type="password" name="pass"><br><br>
+				Birthdate:<br> <input type="date" name="birth"><br><br>
+				Sex:<br>
+				<input type="radio" name="gender" value="male" checked> Male
+				<input type="radio" name="gender" value="female"> Female
+				<input type="radio" name="gender" value="other"> Other <br><br>
+				<input type="checkbox" name="terms"> Sunt de acord cu <b> Termenii si conditiile <b> <br><br>
+				<input type="submit" name="action" value="Register"><br><br>
+			   </form>
+               
+               <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
+					
+            </div>
+				
+         </div>
+			
+      </div>
 
-         <form action="cod.php" method="post">
-         Nume:<br> <input type="text" name="nume"><br><br>
-         Pagini:<br> <input type="number" name="pagini"><br><br>
-		 An:<br> <input type="text" name="an"><br><br>
-         <input type="submit" name="action" value="Inserare"><br><br><br>
-         </form>
-
-</body>
+   </body>
 </html>
