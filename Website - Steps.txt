@@ -1,0 +1,70 @@
+~~ Password ~~
+
+Install Xampp
+Find in C:\xampp\phpMyAdmin the file "config.inc"
+Edit $cfg['Servers'][$i]['auth_type'] = 'config'; to $cfg['Servers'][$i]['auth_type'] = 'cookie';
+Start Control Panel (Xampp)
+Start Apache and MySQL
+Run on Ethenrnet http://localhost/phpmyadmin/
+Username: "root" and press "Go"
+User accounts -> root (Edit privileges) -> Change password
+
+~~ Files ~~
+
+C:\xampp\htdocs (files location)
+Make a new file with .php extention named "cod"
+Copy:
+
+<?php
+  $db_name="root";
+  $db_password="qwerty";
+  $database="sertar";
+
+  $conn = new mysqli('localhost',$db_name,$db_password,$database);
+  if ($conn->connect_error) 
+    die('Could not connect: ' . $conn->connect_error);
+
+  $sql = "INSERT INTO dosare
+          VALUES (NULL, '" . $_POST["nume"] . "' , '" . $_POST["pagini"] . "' , '" . $_POST["an"] . "');";
+
+  if ($conn->query($sql) === TRUE) 
+    echo "New record created successfully";
+  else
+    echo "Error: " . $sql . "<br>" . $conn->error;
+
+
+  $conn->close();
+
+?>
+
+Make a new file with .html extention named "mysite"
+Copy:
+
+<html>
+<body>
+
+         <form action="cod.php" method="post">
+         Nume:<br> <input type="text" name="nume"><br><br>
+         Pagini:<br> <input type="number" name="pagini"><br><br>
+		 An:<br> <input type="text" name="an"><br><br>
+         <input type="submit" name="action" value="Inserare"><br><br><br>
+         </form>
+
+</body>
+</html>
+
+
+~~ Create Database ~~
+
+Open cmd and type "cd C:\xampp\mysql\bin"
+Write "mysql -u root -p"
+Enter your password: ******
+Type:
+
+CREATE DATABASE sertar;
+USE sertar;
+CREATE TABLE dosare(id INT NOT NULL PRIMARY KEY AUTO INCREMENT, nume VARCHAR(30), pagini INT(3), an INT(4));
+
+~~ Website ~~
+
+Run http://localhost/mysite.php
