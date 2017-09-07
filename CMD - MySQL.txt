@@ -1,6 +1,6 @@
-C:\xampp\mysql -> Click + Shift + Dreapta -> Open Command window here
-
-mysql -u root -p
+Open cmd and type "cd C:\xampp\mysql\bin"
+Write "mysql -u root -p"
+Enter your password: ******
 
 SHOW DATABASES;
 
@@ -10,7 +10,7 @@ CREATE DATABASE sertar;
 USE sertar;
 SHOW tables; 
 
-CREATE TABLE dosar (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE dosare(id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 nume VARCHAR(30);
 pagini INT(3),
 an INT(4));

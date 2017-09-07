@@ -13,11 +13,11 @@ User accounts -> root (Edit privileges) -> Change password
 
 C:\xampp\htdocs (files location)
 Make a new file with .php extention named "cod"
-Copy:
+Copy and write the password:
 
 <?php
   $db_name="root";
-  $db_password="qwerty";
+  $db_password="qwerty"; //Xampp password
   $database="sertar";
 
   $conn = new mysqli('localhost',$db_name,$db_password,$database);
